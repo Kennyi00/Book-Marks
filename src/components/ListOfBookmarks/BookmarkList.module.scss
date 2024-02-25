@@ -1,0 +1,90 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #2196f3;
+  color: white;
+  border-radius: 8px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+
+  .bookmarkIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+
+  animation: fadeIn 0.5s ease;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 1s ease;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease;
+
+  .titleContainer,
+  .urlContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1em;
+    }
+
+    .input {
+      padding: 10px;
+      width: 200px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+}
+
+.bookmarksContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  animation: fadeIn 2s ease;
+
+  h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,74 @@
+.App {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  
+    .bookmarkListContainer {
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px; /* Adjust margin top as needed */
+  
+      .headerContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: #2196f3;
+        color: white;
+        border-radius: 8px;
+  
+        h1 {
+          margin: 0;
+        }
+  
+        .bookmarkIcon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+  
+      .inputContainer {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+  
+        .titleContainer,
+        .urlContainer {
+          display: flex;
+          flex-direction: column;
+          margin-right: 10px;
+  
+          h3 {
+            margin-bottom: 5px;
+          }
+  
+          .input {
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+        }
+      }
+  
+      .bookmarksContainer {
+        h3 {
+          margin-bottom: 10px;
+        }
+  
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+  

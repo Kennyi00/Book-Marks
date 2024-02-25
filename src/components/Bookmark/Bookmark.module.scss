@@ -1,0 +1,82 @@
+.bookmarkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: #f8f8f8;
+
+  .input {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 100%;
+  }
+
+  .saveButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+    }
+  }
+
+  .titleWithIcon {
+    display: flex;
+    align-items: center;
+
+    .bookmarkIcon {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    h4 {
+      margin: 0;
+    }
+  }
+
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    .button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin-right: 5px;
+      cursor: pointer;
+      border-radius: 3px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+      }
+    
+      &:hover {
+        background-color: #1976d2;
+        color: #fff;
+      }
+    }
+  }
+}
