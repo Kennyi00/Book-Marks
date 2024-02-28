@@ -81,6 +81,26 @@ function App() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     getBookmarks();
   }, []);
+  const login = async credentials => {
+    try {
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+      });
+      const data = await response.json();
+      const tokenData = data.token;
+      localStorage.setItem('token', tokenData);
+      setToken(tokenData);
+      const userData = data.user;
+      localStorage.setItem('user', JSON.stringify(userData));
+      setUser(userData);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return /*#__PURE__*/React.createElement("div", {
     className: _App_module_scss__WEBPACK_IMPORTED_MODULE_2__["default"].App
   }, /*#__PURE__*/React.createElement(_components_ListOfBookmarks_BookmarkList__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -89,7 +109,8 @@ function App() {
     createBookmark: createBookmark,
     bookmarks: bookmarks,
     updateBookmark: updateBookmark,
-    deleteBookmark: deleteBookmark
+    deleteBookmark: deleteBookmark,
+    login: login
   }));
 }
 
@@ -924,4 +945,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.cbbca346c6fb452d5b6d89b30a58d1c8.js.map
+//# sourceMappingURL=App.cf8e85e304edfb1e968ba9a28bd1e1c5.js.map

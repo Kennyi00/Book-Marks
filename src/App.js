@@ -58,19 +58,44 @@ export default function App() {
     };
 
     useEffect(() => {
-        getBookmarks()
-    }, [])
-
-    return (
+        getBookmarks();
+      }, []);
+    
+      const login = async (credentials) => {
+        try {
+          const response = await fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(credentials),
+          });
+    
+          const data = await response.json();
+          const tokenData = data.token;
+    
+          localStorage.setItem('token', tokenData);
+          setToken(tokenData);
+    
+          const userData = data.user;
+          localStorage.setItem('user', JSON.stringify(userData));
+          setUser(userData);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+    
+      return (
         <div className={styles.App}>
-            <BookmarkList
-                newBookmark={newBookmark}
-                setNewBookmark={setNewBookmark}
-                createBookmark={createBookmark}
-                bookmarks={bookmarks}
-                updateBookmark={updateBookmark}
-                deleteBookmark={deleteBookmark}
-            />
+          <BookmarkList
+            newBookmark={newBookmark}
+            setNewBookmark={setNewBookmark}
+            createBookmark={createBookmark}
+            bookmarks={bookmarks}
+            updateBookmark={updateBookmark}
+            deleteBookmark={deleteBookmark}
+            login={login}  
+          />
         </div>
-    )
-}
+      );
+    }
